@@ -1,24 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import { allGiftCards } from './Data';
 
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <nav>
+        <h3 className='header'>Gift-Cards</h3>
+      </nav>
+
+      <div className='cards-section'>
+        <div className="cards">
+          {
+            allGiftCards.map( giftcard => {
+              
+              return (
+                <div className="card">
+                  <div className="card-title">
+                    { giftcard.title }
+                  </div>
+                  <div className="card-body">{ giftcard.title } gift-card can be converted into <br /> { giftcard.currencies.join(", ").toUpperCase() } currencies. </div>
+                </div>
+              )
+            })
+          }
+
+          
+        </div>
+      </div>
+    </>
   );
 }
 
