@@ -15,7 +15,7 @@ function App() {
             allGiftCards.map( giftcard => {
               
               return (
-                <div className="card">
+                <div className="card" key={ giftcard.id }>
                   <div className="card-title">
                     { giftcard.title }
                   </div>
